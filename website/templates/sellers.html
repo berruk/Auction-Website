@@ -1,0 +1,88 @@
+{% extends "base.html" %} 
+{% block title %}Sellers ordered by number of sells{% endblock %} 
+
+{% block content %}
+<br />
+<h1> Sellers</h1>
+<p>Click on the buttons to display sellers in different orderings:</p>
+
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'Rating')">Rating</button>
+  <button class="tablinks" onclick="openCity(event, 'Sells')">Sells</button>
+</div>
+
+
+<div id="Rating" class="tabcontent">
+  <ul>
+    <table>
+      <tr>
+        <th>Seller</th>
+        <th>Listed Items</th>
+        <th>Sold Items</th>
+        <th>Total Bids</th>
+        <th>Rating</th>
+      </tr>
+      <tr>
+        {% for thing in rating %}
+        <tr>
+        <td>{{ thing[0] }}  </td>
+        <td>{{ thing[1] }}  </td>
+        <td>{{ thing[2] }}  </td>
+        <td>{{ thing[3] }}  </td>
+        <td>{{ thing[4] }}  </td>
+      </tr>
+        {% endfor %} 
+      </tr>
+    </table>
+  
+    
+  </ul>
+</div>
+
+<div id="Sells" class="tabcontent">
+  <ul>
+    <table>
+      <tr>
+        <th>Seller</th>
+        <th>Listed Items</th>
+        <th>Sold Items</th>
+        <th>Total Bids</th>
+        <th>Rating</th>
+      </tr>
+      <tr>
+        {% for thing in sells %}
+        <tr>
+        <td>{{ thing[0] }}  </td>
+        <td>{{ thing[1] }}  </td>
+        <td>{{ thing[2] }}  </td>
+        <td>{{ thing[3] }}  </td>
+        <td>{{ thing[4] }}  </td>
+      </tr>
+        {% endfor %} 
+      </tr>
+    </table>
+  
+    
+  </ul>
+</div>
+
+<script>
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
+
+
+{% endblock %}
+
+

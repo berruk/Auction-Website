@@ -1,0 +1,16 @@
+{% extends "base.html" %} 
+{% block title %}Buyers ordered by username{% endblock %} 
+
+{% block content %}
+<br />
+<h1> All buyers</h1>
+<br />
+<ul>
+    {% for thing in buyers %}
+      <li>{{ thing[0] }} registered at {{ thing[1] }}</li>
+    {% endfor %}  
+</ul>
+
+
+
+{% endblock %}

@@ -1,0 +1,61 @@
+{% extends "base.html" %} 
+{% block title %}Profile{% endblock %} 
+
+{% block styles %}
+{{super()}}
+<link rel="stylesheet" href="{{url_for('.static', filename='starter-template.css')}}">
+{% endblock %}
+
+{% block content %}
+<br />
+<br />
+<h1> Welcome to your profile,  {{ current_user.username }}</h1>
+<br />
+
+{% if seller_class %}
+<div>
+    <h2> You are a {{ seller_class.title }} class seller.</h2>
+</div>
+<br />
+{% endif %}
+
+
+<h2> Account Info </h2>
+{% if current_user %}
+<div>
+    <ul>
+        <li>Name : {% if current_user.name %}{{ current_user.name }}{% endif %}</li>
+        <li>Surname : {% if current_user.surname%}{{ current_user.surname }}{% endif %}</li>
+        <li>User Type : {% if current_user.payment %} Seller 
+            {% else %} Buyer
+            {% endif %}</li>
+
+    </ul>
+</div>
+<br />
+{% endif %}
+
+{% if seller_info %}
+<h2> Your stats </h2>
+<div>
+    <ul>
+        <li>Number of sells : {{ seller_info.numofsells }}</li>
+        <li>Number of products listed : {{ seller_info.numofproducts }}</li>
+        <li>Total bids : {{ seller_info.totalbids }}</li>
+        <li>Rating : {{ seller_info.rating }} / 5
+             <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span></li>
+            
+    </ul>
+</div>
+<br />
+{% endif %}
+
+<div class="container">
+    <button type="submit"><a href="{{ url_for('update_profile') }}">Change Password</a></button>
+    <button type="submit"><a href="{{ url_for('update_info') }}">Update Profile</a></button>
+    {% if user.is_admin %}
+    <button type="submit"><a href="{{ url_for('admin.admin_page') }}">Admin</a></button>
+    {% endif %}
+</div>
+
+{% endblock %}

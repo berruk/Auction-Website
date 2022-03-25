@@ -1,0 +1,80 @@
+{% extends "base.html" %} 
+
+{% block title %}Sign Up{% endblock %} 
+
+{% block content %}
+    
+    <form method="POST">
+    <br />
+      <h3 align="center">Add a Seller Class</h3>
+
+      <div class="form-group">
+        <label for="id">Class ID</label>
+        <input
+          type="id"
+          class="form-control"
+          id="id"
+          name="id"
+          placeholder="Enter an integer ID"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="title">Class Title</label>
+        <input
+          type="title"
+          class="form-control"
+          id="title"
+          name="title"
+          placeholder="Enter Title"
+        />
+      </div>
+      
+      <div class="form-group">
+        <label for="minsell">Minimum amount of sells</label>
+        <input
+          type="minsell"
+          class="form-control"
+          id="minsell"
+          name="minsell"
+          placeholder="Give a number"
+        />
+      </div>
+      <div class="form-group">
+        <label for="minrate">Minimum rating</label>
+        <input
+          type="minrate"
+          class="form-control"
+          id="minrate"
+          name="minrate"
+          placeholder="Enter a value between 0 and 5"
+        />
+      </div>
+      <div class="form-group">
+        <label for="cargo">Cargo price</label>
+        <input
+          type="text"
+          class="form-control"
+          id="cargo"
+          name="cargo"
+          placeholder="Enter a number in TL"
+        />
+      </div>
+      <div class="form-group">
+        <label for="percent">Percent</label>
+        <input
+          type="text"
+          class="form-control"
+          id="percent"
+          name="percent"
+          placeholder="Enter a value between 0 and 100"
+        />
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+      <br />
+
+    </form>
+
+
+{% endblock %}
+    

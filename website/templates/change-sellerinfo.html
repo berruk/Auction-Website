@@ -1,0 +1,81 @@
+{% extends "base.html" %} 
+
+{% block title %}Sign Up{% endblock %} 
+
+{% block content %}
+    
+    <form method="POST">
+    <br />
+      <h3 align="center">Change a Seller's Info</h3>
+
+      <div class="form-group">
+        <label for="username">Seller username</label>
+        <input
+          type="username"
+          class="form-control"
+          id="username"
+          name="username"
+          placeholder="Enter Username"
+        />
+      </div>
+      <div class="form-group">
+        <label for="numofproducts">Number of products</label>
+        <input
+          type="numofproducts"
+          class="form-control"
+          id="numofproducts"
+          name="numofproducts"
+          placeholder="Enter Number of Products Listed"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="numofsells">Number of sold products</label>
+        <input
+          type="numofsells"
+          class="form-control"
+          id="numofsells"
+          name="numofsells"
+          placeholder="Enter Number of Sells"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="totalbids">Total bids made to seller's products</label>
+        <input
+          type="totalbids"
+          class="form-control"
+          id="totalbids"
+          name="totalbids"
+          placeholder="Enter Total Bids"
+        />
+      </div>
+      <div class="form-group">
+        <label for="rating">Rating</label>
+        <input
+          type="rating"
+          class="form-control"
+          id="rating"
+          name="rating"
+          placeholder="Enter a value between 0 and 5"
+        />
+      </div>
+      <div class="form-group">
+        <label for="sellerclass">Seller Class</label>
+        <input
+          type="sellerclass"
+          class="form-control"
+          id="sellerclass"
+          name="sellerclass"
+          placeholder="Enter a Seller Class Title"
+        />
+      </div>
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+      <br />
+
+    </form>
+
+
+{% endblock %}
+    

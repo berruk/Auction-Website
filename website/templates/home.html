@@ -1,0 +1,37 @@
+
+{% extends "base.html" %}
+
+{% block title %}
+Home Page
+{% endblock %}
+
+<link rel="stylesheet" href="templates/css/home.css">
+
+{% block content %}
+<br />
+<h1 align="center"> WELCOME </h1>
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+    <tr><td align="center">
+    <img src="/static/logoBig.png">
+    </td></tr>
+    </table>
+
+<br />
+<h2 align="center"> SELL AND BUY SECOND HAND ITEMS IN AUCTIONS</h2>
+<br />
+
+<h2 align="center"> Currently </h2>
+<div align="center">
+         <li >Sellers:  {{ seller }}</li>
+         <li >Buyers:  {{ buyer }}</li>
+         <li >Products:  {{ product }}</li>
+    </ul>
+</div>
+<br />
+
+{% if user.is_authenticated %}
+{% else %}
+<p align="center"><a href="{{ url_for('auth.login') }}">Login</a> or  <a href="{{ url_for('auth.sign_up') }}">Sign Up</a></p> 
+{% endif %}
+{% endblock %}
+

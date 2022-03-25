@@ -1,0 +1,105 @@
+{% extends "base.html" %} 
+
+{% block content %}
+<br />
+<h1>Products</h1>
+<p>Click on the buttons to display products in different orderings:</p>
+
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'Brand')">Brand</button>
+  <button class="tablinks" onclick="openCity(event, 'Category')">Category</button>
+  <button class="tablinks" onclick="openCity(event, 'Year')">Year</button>
+</div>
+
+<div id="Brand" class="tabcontent">
+  <ul>
+    <table>
+      <tr>
+        <th>Product</th>
+        <th>Brand</th>
+        <th>Category</th>
+        <th>Start Bid</th>
+        <th>Year</th>
+      </tr>
+      <tr>
+        {% for thing in brand %}
+        <tr>
+        <td>{{ thing[0] }}  </td>
+        <td>{{ thing[1] }}  </td>
+        <td>{{ thing[2] }}  </td>
+        <td>{{ thing[3] }}  </td>
+        <td>{{ thing[4] }}  </td>
+      </tr>
+        {% endfor %} 
+      </tr>
+    </table> 
+  </ul>
+</div>
+
+<div id="Category" class="tabcontent">
+    <ul>
+      <table>
+        <tr>
+          <th>Product</th>
+          <th>Brand</th>
+          <th>Category</th>
+          <th>Start Bid</th>
+          <th>Year</th>
+        </tr>
+        <tr>
+          {% for thing in category %}
+          <tr>
+          <td>{{ thing[0] }}  </td>
+          <td>{{ thing[1] }}  </td>
+          <td>{{ thing[2] }}  </td>
+          <td>{{ thing[3] }}  </td>
+          <td>{{ thing[4] }}  </td>
+        </tr>
+          {% endfor %} 
+        </tr>
+      </table> 
+    </ul>
+  </div>
+
+  <div id="Year" class="tabcontent">
+    <ul>
+      <table>
+        <tr>
+          <th>Product</th>
+          <th>Brand</th>
+          <th>Category</th>
+          <th>Start Bid</th>
+          <th>Year</th>
+        </tr>
+        <tr>
+          {% for thing in year %}
+          <tr>
+          <td>{{ thing[0] }}  </td>
+          <td>{{ thing[1] }}  </td>
+          <td>{{ thing[2] }}  </td>
+          <td>{{ thing[3] }}  </td>
+          <td>{{ thing[4] }}  </td>
+        </tr>
+          {% endfor %} 
+        </tr>
+      </table> 
+    </ul>
+  </div>
+
+<script>
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
+
+{% endblock %}

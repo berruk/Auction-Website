@@ -1,0 +1,28 @@
+{% extends "base.html" %} 
+
+{% block title %}Delete{% endblock %} 
+
+{% block content %}
+    
+    <form method="POST">
+    <br />
+      <h3 align="center">Delete Seller or a Buyer</h3>
+
+      <div class="form-group">
+        <label for="username">Username to be deleted</label>
+        <input
+          type="username"
+          class="form-control"
+          id="username"
+          name="username"
+          placeholder="Enter a username"
+        />
+        <br />
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+
+      </div>
+
+
+{% endblock %}
+    

@@ -1,0 +1,28 @@
+{% extends "base.html" %} 
+
+{% block title %}Delete{% endblock %} 
+
+{% block content %}
+    
+    <form method="POST">
+    <br />
+      <h3 align="center">Delete Seller Class</h3>
+
+      <div class="form-group">
+        <label for="title">Title of class to delete</label>
+        <input
+          type="title"
+          class="form-control"
+          id="title"
+          name="title"
+          placeholder="Enter a Title"
+        />
+        <br />
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+
+      </div>
+
+
+{% endblock %}
+    

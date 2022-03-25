@@ -1,0 +1,30 @@
+{% extends "base.html" %} 
+{% block title %}Class types{% endblock %} 
+
+{% block content %}
+<br />
+<h1> Class Types</h1>
+<br />
+<ul>
+    {% for thing in classes %}
+      <li> Title: {{ thing[1] }} Minimum sold products: {{ thing[2] }}, Minimum rating: {{ thing[2] }}, Cargo price: {{ thing[3] }}, Percentage: {{ thing[4] }} </li>
+    {% endfor %}  
+</ul>
+
+<div class="container">
+    <button type="submit"><a href="{{ url_for('admin.add_class') }}">Add a class</a></button>
+    <button type="submit"><a href="{{ url_for('admin.change_class') }}">Alter a class</a></button>
+    <button type="submit"><a href="{{ url_for('admin.delete_class') }}">Delete a class</a></button>
+    <button type="submit"><a href="{{ url_for('admin.delete_user') }}">Delete user</a></button>
+    <button type="submit"><a href="{{ url_for('admin.change_sellerinfo') }}">Change Seller Statistics</a></button>
+
+</div>
+<br />
+<br />
+<br />
+<br />
+
+{% endblock %}
+
+{% block change_title %}{% endblock %} 
+
