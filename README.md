@@ -1,5 +1,4 @@
-# Flask Web App Development Branch
-
+# Flask Web App 
 An auction website prepared with Flask framework.
 
 | File/Folder | Purpose     |
